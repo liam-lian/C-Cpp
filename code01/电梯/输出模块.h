@@ -1,0 +1,1 @@
+void output(struct ELEVATOR elevator,LISTNODEPTR headp,bool broken[]);
