@@ -1,0 +1,82 @@
+//龟兔赛跑 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main(int argc, char *argv[])
+{
+    srand(time(NULL));
+    char a[71]={'\0'};
+    int i,num,GUI=0,GUI1,TU=0,TU1;
+    for(i=1;i<=69;i++)
+      a[i]='.';
+    a[0]='!';   
+    puts(a);
+    while(GUI!=69&&TU!=69)
+   {
+       num=rand()%10+1;
+       GUI1=GUI; 
+       TU1=TU;
+       a[TU1]='.';
+       a[GUI1]='.';   
+       if(num>=1&&num<=5)
+          {
+            if(GUI+3<=69)             
+               GUI+=3;
+            else
+               GUI=69;
+          }     
+      if(num>=6&&num<=7)
+           {
+            if(GUI>=6)               
+                 GUI-=6;
+            else  
+                 GUI=0;
+           }         
+      if(num>=8&&num<=10)  
+          GUI+=1;
+      a[GUI]='G';
+      if(num==3||num==4)
+        {
+            if(TU+9<=69)             
+               TU+=9;
+            else
+               TU=69;
+        }       
+      if(num==5)
+        {
+          if(TU>=12)     
+             TU-=12;
+          else 
+             TU=0;
+        }      
+      if(num>=6&&num<=8)
+        TU++;
+      if(num==9&&num==10)
+       {
+        if(TU>=2)
+          TU-=2;        
+        else
+          TU=0;
+        }   
+      if(GUI==TU)
+         a[GUI]='!';
+      if(GUI!=TU)
+         a[TU]='T';
+       puts(a);  
+       if(a[GUI]=='!')
+           printf("咬在一起了\n");
+       if(GUI==69&&TU==69)
+          {
+           GUI=0;
+           TU=0;
+           printf("平手，再来\n"); 
+          }    
+    }
+    if(TU==69)
+      printf("兔子赢了！！！\n");
+    else
+      printf("乌龟赢了！！！\n"); 
+    printf("差了%d步!\n",abs(TU-GUI));  
+  system("PAUSE");	
+  return 0;
+}
