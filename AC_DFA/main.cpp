@@ -7,14 +7,14 @@
 #include "Destorytree.h"
 using namespace std;
 
-###
+
 int main(int argc,char *argv[])
 {
     FILE * fp,*fp1;
     fpOut=fopen(argv[3],"a");
 
-    fp=fopen(argv[1],"r");
-    fp1=fopen(argv[2],"r");
+    fp=fopen(argv[2],"r");
+    fp1=fopen(argv[1],"r");
     char strLine[500];
 
     if(fp==NULL){

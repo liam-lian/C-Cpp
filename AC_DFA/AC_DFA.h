@@ -69,7 +69,7 @@ unsigned char*  ReverseOutput(struct AC_Node* node){
 
 //仅仅作为测试，测试反向输出的结果是否正确
 void write2File(int index,unsigned char * z){
-     fprintf(fpOut,"%d----%s\n",index,z);
+     fprintf(fpOut,"%s %d\n",z,index);
    // fclose(fpOut);
 }
 
